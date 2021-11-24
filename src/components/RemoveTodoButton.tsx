@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function RemoveTodoButton() {
   return (
-    <button className="inline-flex items-center justify-center cursor-pointer bg-gray-700 rounded-lg text-white px-2 py-1 ">
+    <button className="inline-flex items-center justify-center cursor-pointer bg-gray-700 rounded-lg text-white px-2 py-1">
       <svg
         aria-hidden="true"
         focusable="false"
