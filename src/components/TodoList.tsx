@@ -1,12 +1,18 @@
 import React from 'react'
+import { Todo } from '@/components/TodoBoard'
 import TodoItem from '@/components/TodoItem'
 
-export default function TodoList() {
+export type TodoListProps = {
+  todoList: Todo[]
+}
+
+export default function TodoList({ todoList }: TodoListProps) {
   return (
     <div>
       <ul>
-        <TodoItem />
-        <TodoItem />
+        {todoList.map((todoItem) => (
+          <TodoItem key={todoItem.id} text={todoItem.text} isChecked={todoItem.isChecked} />
+        ))}
       </ul>
     </div>
   )

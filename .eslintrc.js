@@ -31,6 +31,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-shadow': 'error',
     'no-param-reassign': ['error'],
+    'import/no-cycle': 'error',
     // Sort imports
     'import/order': [
       'warn',

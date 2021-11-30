@@ -1,10 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
-
-type Todo = {
-  id: number
-  text: string
-  isChecked: boolean
-}
+import { Todo } from '@/components/TodoBoard'
 
 let nextId = 0
 
@@ -15,8 +10,12 @@ function getNextId() {
   return currentNextId
 }
 
-export default function TodoInput() {
-  const [todoLists, setTodoLists] = useState<Todo[]>([])
+export type TodoInputProps = {
+  // onNewTodo รับมาจาก TodoBoard เป็น Function ที่ไม่ return แต่ส่งค่า newTodo ไปให้ TodoBoard
+  onNewTodo: (newTodoText: Todo) => void
+}
+
+export default function TodoInput({ onNewTodo }: TodoInputProps) {
   const [textTodo, setTextTodo] = useState('')
 
   function handleAddTodo(event: FormEvent<HTMLFormElement>) {
@@ -26,7 +25,7 @@ export default function TodoInput() {
       text: textTodo,
       isChecked: false,
     }
-    setTodoLists([...todoLists, newTodo])
+    onNewTodo(newTodo)
     setTextTodo('')
   }
 
