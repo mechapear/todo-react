@@ -1,12 +1,13 @@
 import React, { ChangeEvent } from 'react'
-import RemoveTodoButton from '@/components/RemoveTodoButton'
+import RemoveTodoButton, { RemoveTodoButtonProps } from '@/components/RemoveTodoButton'
 import { Todo } from '@/components/TodoBoard'
 
 export type TodoItemProps = Pick<Todo, 'text' | 'isChecked'> & {
   onChange: (newIsChecked: boolean) => void
+  onRemove: RemoveTodoButtonProps['onClick']
 }
 
-export default function TodoItem({ text, isChecked, onChange }: TodoItemProps) {
+export default function TodoItem({ text, isChecked, onChange, onRemove }: TodoItemProps) {
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.checked)
   }
@@ -24,7 +25,7 @@ export default function TodoItem({ text, isChecked, onChange }: TodoItemProps) {
         </div>
         <span className="flex-auto text-gray-700">{text}</span>
       </label>
-      <RemoveTodoButton />
+      <RemoveTodoButton onClick={onRemove} />
     </li>
   )
 }

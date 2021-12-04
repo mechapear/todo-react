@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { MouseEventHandler } from 'react'
 
-export default function RemoveTodoButton() {
+export type RemoveTodoButtonProps = {
+  onClick: MouseEventHandler<HTMLButtonElement>
+}
+
+export default function RemoveTodoButton({ onClick }: RemoveTodoButtonProps) {
   return (
-    <button className="inline-flex items-center justify-center cursor-pointer bg-gray-700 rounded-lg text-white px-2 py-1">
+    <button
+      className="inline-flex items-center justify-center cursor-pointer bg-gray-700 rounded-lg text-white px-2 py-1"
+      onClick={onClick}
+    >
       <svg
         aria-hidden="true"
         focusable="false"

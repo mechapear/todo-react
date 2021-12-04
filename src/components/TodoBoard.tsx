@@ -22,10 +22,18 @@ export default function TodoBoard() {
     setTodoList(updateTodo)
   }
 
+  const handleRemoveTodo = (id: Todo['id']) => {
+    const updateTodo = todoList.filter((todo) => {
+      if (todo.id !== id) return todo
+    })
+
+    setTodoList(updateTodo)
+  }
+
   return (
     <div>
       <TodoInput onNewTodo={handleNewTodo} />
-      <TodoList todoList={todoList} onCheckTodo={handleCheckTodo} />
+      <TodoList todoList={todoList} onCheckTodo={handleCheckTodo} onRemoveTodo={handleRemoveTodo} />
     </div>
   )
 }
