@@ -13,10 +13,19 @@ export default function TodoBoard() {
 
   const handleNewTodo = (newTodo: Todo) => setTodoList([...todoList, newTodo])
 
+  const handleCheckTodo = ({ id, isChecked }: Pick<Todo, 'id' | 'isChecked'>) => {
+    const updateTodo = todoList.map((todo) => {
+      if (todo.id !== id) return todo
+
+      return { ...todo, isChecked: isChecked }
+    })
+    setTodoList(updateTodo)
+  }
+
   return (
     <div>
       <TodoInput onNewTodo={handleNewTodo} />
-      <TodoList todoList={todoList} />
+      <TodoList todoList={todoList} onCheckTodo={handleCheckTodo} />
     </div>
   )
 }
