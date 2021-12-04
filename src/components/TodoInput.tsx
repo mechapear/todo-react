@@ -1,14 +1,6 @@
+import { nanoid } from 'nanoid'
 import React, { ChangeEvent, FormEvent, useState } from 'react'
 import { Todo } from '@/components/TodoBoard'
-
-let nextId = 0
-
-function getNextId() {
-  // เก็บค่า nextId เดิมเอาไว้ก่อนที่จะบวก
-  const currentNextId = nextId
-  nextId = nextId + 1
-  return currentNextId
-}
 
 export type TodoInputProps = {
   // onNewTodo รับมาจาก TodoBoard เป็น Function ที่ไม่ return แต่ส่งค่า newTodo ไปให้ TodoBoard
@@ -21,7 +13,7 @@ export default function TodoInput({ onNewTodo }: TodoInputProps) {
   function handleAddTodo(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const newTodo: Todo = {
-      id: getNextId(),
+      id: nanoid(),
       text: textTodo,
       isChecked: false,
     }

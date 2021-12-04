@@ -3,15 +3,29 @@ import TodoInput from '@/components/TodoInput'
 import TodoList from '@/components/TodoList'
 
 export type Todo = {
-  id: number
+  id: string
   text: string
   isChecked: boolean
 }
 
-export default function TodoBoard() {
-  const [todoList, setTodoList] = useState<Todo[]>([])
+// save todoList ใน localStorage
+const saveInStorage = (todoList: Todo[]) => {
+  localStorage.setItem('allTodoList', JSON.stringify(todoList))
+}
 
-  const handleNewTodo = (newTodo: Todo) => setTodoList([...todoList, newTodo])
+// get allTodoList from localStorage
+const getDataFromStorage = (): Todo[] => {
+  const rawStorageStr = localStorage.getItem('allTodoList')
+  return rawStorageStr ? JSON.parse(rawStorageStr) : []
+}
+
+export default function TodoBoard() {
+  const [todoList, setTodoList] = useState<Todo[]>(getDataFromStorage)
+
+  const handleNewTodo = (newTodo: Todo) => {
+    setTodoList([...todoList, newTodo])
+    saveInStorage([...todoList, newTodo])
+  }
 
   const handleCheckTodo = ({ id, isChecked }: Pick<Todo, 'id' | 'isChecked'>) => {
     const updateTodo = todoList.map((todo) => {
@@ -20,6 +34,7 @@ export default function TodoBoard() {
       return { ...todo, isChecked: isChecked }
     })
     setTodoList(updateTodo)
+    saveInStorage(updateTodo)
   }
 
   const handleRemoveTodo = (id: Todo['id']) => {
@@ -28,6 +43,7 @@ export default function TodoBoard() {
     })
 
     setTodoList(updateTodo)
+    saveInStorage(updateTodo)
   }
 
   return (
