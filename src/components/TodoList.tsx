@@ -1,6 +1,6 @@
 import React from 'react'
-import { Todo } from '@/components/TodoBoard'
 import TodoItem from '@/components/TodoItem'
+import { Todo } from '@/domain/todo.types'
 
 export type TodoListProps = {
   todoList: Todo[]

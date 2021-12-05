@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react'
 import RemoveTodoButton, { RemoveTodoButtonProps } from '@/components/RemoveTodoButton'
-import { Todo } from '@/components/TodoBoard'
+import { Todo } from '@/domain/todo.types'
 
 export type TodoItemProps = Pick<Todo, 'text' | 'isChecked'> & {
   onChange: (newIsChecked: boolean) => void

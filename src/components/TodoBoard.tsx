@@ -1,23 +1,8 @@
 import React, { useState } from 'react'
 import TodoInput from '@/components/TodoInput'
 import TodoList from '@/components/TodoList'
-
-export type Todo = {
-  id: string
-  text: string
-  isChecked: boolean
-}
-
-// save todoList ใน localStorage
-const saveInStorage = (todoList: Todo[]) => {
-  localStorage.setItem('allTodoList', JSON.stringify(todoList))
-}
-
-// get allTodoList from localStorage
-const getDataFromStorage = (): Todo[] => {
-  const rawStorageStr = localStorage.getItem('allTodoList')
-  return rawStorageStr ? JSON.parse(rawStorageStr) : []
-}
+import { Todo } from '@/domain/todo.types'
+import { getDataFromStorage, saveInStorage } from '@/lib/storage'
 
 export default function TodoBoard() {
   const [todoList, setTodoList] = useState<Todo[]>(getDataFromStorage)

@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 import React, { ChangeEvent, FormEvent, useState } from 'react'
-import { Todo } from '@/components/TodoBoard'
+import { Todo } from '@/domain/todo.types'
 
 export type TodoInputProps = {
   // onNewTodo รับมาจาก TodoBoard เป็น Function ที่ไม่ return แต่ส่งค่า newTodo ไปให้ TodoBoard
