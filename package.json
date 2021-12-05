@@ -3,10 +3,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build-gh": "yarn build --base=/todo-react/",
     "serve": "vite preview --port 8080",
     "type-check": "tsc -p tsconfig.json",
     "lint": "eslint ./src",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy-gh": "yarn build-gh && gh-pages -d dist"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
@@ -36,6 +38,7 @@
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-unused-imports": "^1.1.5",
+    "gh-pages": "^3.2.3",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
     "postcss": "^8.3.6",
