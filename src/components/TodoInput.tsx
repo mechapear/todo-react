@@ -13,6 +13,8 @@ export default function TodoInput({ onNewTodo }: TodoInputProps) {
 
   function handleAddTodo(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (textTodo === '') return undefined
+
     const newTodo: Todo = {
       id: nanoid(),
       text: textTodo,
