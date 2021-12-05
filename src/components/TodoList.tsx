@@ -10,7 +10,7 @@ export type TodoListProps = {
 
 export default function TodoList({ todoList, onCheckTodo, onRemoveTodo }: TodoListProps) {
   return (
-    <div>
+    <div className="mt-6">
       <ul>
         {todoList.map((todoItem) => {
           return (

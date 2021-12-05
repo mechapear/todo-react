@@ -5,3 +5,7 @@
 body {
   @apply bg-gradient-to-r from-[#8ec5fc] to-[#e0c3fc] p-4;
 }
+
+.svg-icon {
+  @apply inline align-middle w-[1em] h-[1em] leading-none;
+}

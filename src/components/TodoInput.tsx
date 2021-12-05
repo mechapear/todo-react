@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid'
 import React, { ChangeEvent, FormEvent, useState } from 'react'
 import { Todo } from '@/domain/todo.types'
+import PlusIcon from '@/icons/PlusIcon'
 
 export type TodoInputProps = {
   // onNewTodo รับมาจาก TodoBoard เป็น Function ที่ไม่ return แต่ส่งค่า newTodo ไปให้ TodoBoard
@@ -37,9 +38,10 @@ export default function TodoInput({ onNewTodo }: TodoInputProps) {
       />
       <button
         type="submit"
-        className="flex-shrink-0 border bg-cyan-500 rounded-lg p-2 text-center text-gray-100 min-w-[6rem] hover:bg-cyan-600"
+        className="flex-shrink-0 border bg-cyan-500 rounded-lg p-2 space-x-1 text-center text-gray-100 min-w-[2.625rem] sm:min-w-[6rem] hover:bg-cyan-600 inline-flex items-center justify-center"
       >
-        Add
+        <PlusIcon />
+        <span className="hidden sm:inline">Add</span>
       </button>
     </form>
   )
