@@ -4,6 +4,15 @@
 
 body {
   @apply bg-gradient-to-r from-[#8ec5fc] to-[#e0c3fc] p-4;
+  /*@apply bg-gradient-to-r from-[#667eea] to-[#764ba2] p-4;*/
+  /*@apply bg-gradient-to-r from-[#3d3393] to-[#2cacd1] p-4;*/
+  /*@apply bg-gradient-to-r from-[#473B7B] to-[#30D2BE] p-4;*/
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-gradient-to-r from-[#473B7B] to-[#3584A7] p-4; /*dark mood*/
+  }
 }
 
 .svg-icon {
