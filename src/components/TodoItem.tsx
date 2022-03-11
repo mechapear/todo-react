@@ -13,7 +13,7 @@ export default function TodoItem({ text, isChecked, onChange, onRemove }: TodoIt
   }
 
   return (
-    <li className="group flex items-start justify-between space-x-4 p-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+    <li className="group flex items-start justify-between space-x-4 p-4 hover:bg-color-listHover dark:hover:bg-color-listHover rounded-lg">
       <label className="flex space-x-4">
         <div className="flex h-6 items-center">
           <input
@@ -23,7 +23,7 @@ export default function TodoItem({ text, isChecked, onChange, onRemove }: TodoIt
             onChange={handleOnChange}
           />
         </div>
-        <span className="flex-auto text-gray-700 dark:text-gray-200">{text}</span>
+        <span className="flex-auto text-color-list dark:text-color-list">{text}</span>
       </label>
       <div className="invisible group-hover:visible">
         <RemoveTodoButton onClick={onRemove} />

@@ -33,14 +33,14 @@ export default function TodoInput({ onNewTodo }: TodoInputProps) {
       <input
         type="text"
         name="todoInput"
-        className="flex-1 border border-cyan-500 dark:border-cyan-200 rounded-lg p-2 focus:outline-none focus:ring-cyan-600 dark:focus:ring-cyan-100 focus:ring-1 min-w-0 dark:text-gray-200 dark:bg-gray-700"
+        className="flex-1 border border-color-input dark:border-color-input rounded-lg p-2 focus:outline-none focus:ring-color-inputFocus dark:focus:ring-color-inputFocus focus:ring-1 min-w-0 text-color-input dark:text-color-input bg-color-input dark:bg-color-input"
         placeholder="New Task"
         value={textTodo}
         onChange={handleOnChange}
       />
       <button
         type="submit"
-        className="flex-shrink-0 border dark:border-cyan-200 bg-cyan-500 dark:bg-cyan-200 rounded-lg p-2 space-x-1 text-center text-gray-100 dark:text-cyan-700 min-w-[2.625rem] sm:min-w-[6rem] hover:bg-cyan-600 dark:hover:bg-cyan-100 inline-flex items-center justify-center"
+        className="flex-shrink-0 border border-color-button dark:border-color-button bg-color-button dark:bg-color-button rounded-lg p-2 space-x-1 text-center text-color-button dark:text-color-button min-w-[2.625rem] sm:min-w-[6rem] hover:bg-color-buttonHover dark:hover:bg-color-buttonHover inline-flex items-center justify-center"
       >
         <PlusIcon />
         <span className="hidden sm:inline">Add</span>

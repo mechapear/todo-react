@@ -4,14 +4,46 @@
 
 body {
   @apply bg-gradient-to-r from-[#8ec5fc] to-[#e0c3fc] p-4;
-  /*@apply bg-gradient-to-r from-[#667eea] to-[#764ba2] p-4;*/
-  /*@apply bg-gradient-to-r from-[#3d3393] to-[#2cacd1] p-4;*/
-  /*@apply bg-gradient-to-r from-[#473B7B] to-[#30D2BE] p-4;*/
+}
+
+:root {
+  --color-board-bg: #fff;
+  --color-board-border: #fff;
+  --color-header-text: #374151;
+  --color-input-border: #06b6d4;
+  --color-input-ring-focus: #0891b2;
+  --color-input-text: #374151;
+  --color-input-bg: #fff;
+  --color-button-bg: #06b6d4;
+  --color-button-text: #f3f4f6;
+  --color-button-border: #06b6d4;
+  --color-button-bg-hover: #0891b2;
+  --color-list-bg-hover: #f3f4f6;
+  --color-list-text: #374151;
+  --color-remove-text: #fff;
+  --color-remove-bg: #fd6262;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
     @apply bg-gradient-to-r from-[#473B7B] to-[#3584A7] p-4; /*dark mood*/
+  }
+  :root {
+    --color-board-bg: #1f2937;
+    --color-board-border: #1f2937;
+    --color-header-text: #d1d5db;
+    --color-input-border: #06b6d4;
+    --color-input-ring-focus: #cffafe;
+    --color-input-text: #e2e8f0;
+    --color-input-bg: #374151;
+    --color-button-bg: #06b6d4;
+    --color-button-text: #1f2937;
+    --color-button-border: #06b6d4;
+    --color-button-bg-hover: #22d3ee;
+    --color-list-bg-hover: #374151;
+    --color-list-text: #e5e7eb;
+    --color-remove-text: #e5e7eb;
+    --color-remove-bg: #c55a5a;
   }
 }
 
